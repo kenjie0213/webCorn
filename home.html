@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="" class="imglogo">
+            <p id="logo">CornScan</p>
+        </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li>
+                        <a href="home.html" class="active" >Home</a>
+                    </li>
+
+                    <li>
+                        <a href="classifier.html">Camera Classifier</a>
+                    </li>
+                    
+                    <li>
+                        <a href="classifier2.html" >File Classifier</a>
+                    </li>
+
+                    <li>
+                        <a href="disease.html">Diseases</a>
+                    </li>
+
+                    <li>
+                    <a href="developers.html" >Developers</a>
+                    </li>
+
+                    <li>
+                        <a href="account.html"  >Account</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        
+    </header>
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+    <div class="main">
+        <div class="gif">
+            <img src="corn.gif" alt="">
+            <div class="gifText">
+                <h1>CornScan</h1>
+                <h2>Smart Disease Detector </h2>
+            </div>
+            <div class="wave">
+                <img src="wave.png" alt="">
+            </div>
+        </div>
+
+        <div class="missionVision">
+            <div class="icon mission">
+                <img src="mission1.png" alt="" class="img miscon">
+                <p class="mis">MISSION</p>
+                <br>
+                <p class="mission">
+                    To revolutionize disease detection in agricultureindustry by developing and deploying smart
+                    disease detection technology especially for corn crops. We aim to provide farmers with an advances
+                    and efficient solution to detect diseases in the corn fields, enabling them to make timely and
+                    informed decisions to protect their crops and maximize their yields.
+                </p>
+            </div>
+            <div class="icon vision">
+                <img src="vision1.png" alt="" class="img viscon">
+                <p class="mis">VISSION</p>
+                <br>
+                <p class="mission">
+                    To become the leading provider of smart disease detection system for corn crops worldwide. We envision
+                    a future where farmers can proactively manage and combat diseases in their corn fields, resulting
+                    in healthier plants, increased productivity, and sustain farming practices. By harnessing the power of 
+                    technology, we strive to contribute to global food security and the well-being of farming communities.
+                </p>
+            </div>
+        </div>
+        <br><br>
+    <!--About us-->
+            <div class="about">
+                <div class="scanText">
+                    <p class="know"><b> Know About Us</b></p>
+                    <br>
+                    <p id="scan">
+                        Detect and protect you  corn in a sigle click.Welcome to Corn Disease Detector System. 
+                        This machine learning system is Corn Disease Detector System. It is system that can 
+                        determine the type of disease that infect corn crops. Our System is designed to help 
+                        farmers in monitoring the health of their corn crops by providing accurate information 
+                        about common disease affecting corn crops. 
+                        <br><br>
+                        The system and website was created and developed by thrid year students of Ilocos Sur
+                        Polythecnic State College - main campus in fufilling thier final project in CS313.
+                    </p>
+                    <br>
+
+                </div>
+                <div class="scan">
+                    <img src="scan.jpg" alt="" class="imgscan">
+                </div>
+            </div>
+        <br><br>
+
+        <div class="features">
+            <img src="features.png" alt="" class="imgFeature">
+            <h1 class="instruction">Web Features</h1>
+            <br>
+            <div class="feature1">
+                <img src="f1.jpg" class="imgF f1">
+                <p> <b>Image Classifier </b><br><br>
+                     An image classifier is a feature on a website that uses machine learning algorithms to 
+                    analyze and categorize images based on their content. It can automatically identify and 
+                    assign corn disease. Users can upload an image to the website, and the image classifier 
+                    will process it and provid predictions about the posibble disease of the image.</p>
+            </div>
+
+            <br><br>
+            <div class="feature2">
+                <p> <b>Video Classifier </b><br><br>
+                    Similar to the image classifier, a video classifier is a feature that also applies machine 
+                    learning techniques to analyze and categorize videos based on the plant characteristics. 
+                    Users can take a live video by allowing the website to access the phone camera and the 
+                    video classifier will process it, often by analyzing the video, it will provide insights 
+                    or predictions about the posibble disease of the plant.
+                </p>
+                
+                <img src="f2.jpg" class="imgF f2">
+            </div>
+
+
+            <br><br>
+            <div class="feature3">
+                
+                <img src="f3.jpg" class="imgF f3">
+                <p> <b>Corn Disease Directory </b><br><br>
+                     A corn disease directory is a feature on a website that serves as 
+                    a comprehensive reference or database of various diseases that affect corn plants. 
+                    It provides information about different types of diseases, their symptoms, causes, and 
+                    possible treatments. The directory may include images or descriptions of the diseases, as 
+                    well as information about preventive measures or management strategies. Users, such as 
+                    farmers or agricultural researchers, can access the directory to identify and learn about 
+                    specific corn diseases they encounter in their fields, aiding in early detection and 
+                    appropriate action to mitigate the impact on crop yields.
+
+                </p>
+                
+            </div>
+
+
+        </div>
+        <br><br>
+   <footer class="footer-footer">
+    <div class="footer-container">
+      <div class="footer-container1">
+        <span class="footer-text">CORNSCAN: SMART DISEASE DETECTOR FOR CORN CROPS</span>
+        <span>Copyright © 2023 Created by Team Corny.</span>
+      </div>
+      <div class="footer-container2">
+        <div class="footer-container3">
+          <span class="footer-text02 Large">CS313-Web Development</span>
+          <span class="footer-text03 Large">ISPSC Main Campus</span>
+          <span class="footer-text04 Large">Computer Science Department</span>
+        </div>
+      </div>
+
+      <div class="footer-container4">
+        <div class="footer-container5">
+          <span class="footer-text06 Large">Contacts</span>
+          <span class="footer-text05 Large">teamcorny@gmail.com</span>
+          <span class="footer-text07 Large">0912-345-6789</span>
+        </div>
+      </div>
+    </div>
+    <img alt="image" src="public/waves-white.svg" class="footer-image" />
+  </footer>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+    <link rel="stylesheet" href="classifier2.css">
+
+<html>
+ <link rel="stylesheet" href="classifier2.css">
+<head>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    
+    <script>
+        var loadFile=function(event)
+        {
+            var image = document.getElementById("image");
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+        let model="https://teachablemachine.withgoogle.com/models/GUMS-WvVG/";
+        const classifier = ml5.imageClassifier(model + 'model.json', modelLoaded)
+
+        function modelLoaded()
+        {
+            console.log("Model Loaded!")
+        }
+        function predict()
+        {
+            classifier.predict(document.getElementById("image"),
+            function(err,results)
+            {
+                document.getElementById("prediction_result").value=results[0].label;
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="" class="imglogo">
+            <p id="logo">CornScan</p>
+        </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li>
+                        <a href="home.html" >Home</a>
+                    </li>
+
+                    <li>
+                        <a href="classifier.html">Camera Classifier</a>
+                    </li>
+                    
+                    <li>
+                        <a href="classifier2.html" class="active">File Classifier</a>
+                    </li>
+
+                    <li>
+                        <a href="disease.html">Diseases</a>
+                    </li>
+
+                    <li>
+                    <a href="developers.html" >Developers</a>
+                    </li>
+
+                    <li>
+                        <a href="account.html" >Account</a>
+                    </li>
+                </ul>
+            </nav>
+        
+    </header>
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+    <br><br><br><br><br><br>
+   <div class="backgroundimage">
+    <div class="imgcon1">
+        <img src="3.jpg" alt="" class="imageback">
+    </div>
+    <div class="imgcon2">
+        <div class="con1">
+            <div class="con2">
+                <img src="" alt="" id="image" width="360px" height="300px" >
+            </div>
+            
+            <div class="con3">
+                <input type="file" accept="image/*" onchange="loadFile(event)" name="image" id="file">
+            <label for="file">Upload File</label>
+            <br><br><br> 
+        
+            <button class="predict" onclick="predict()"><b>Predict</b></button>
+            <br><br><br>
+            <input type="text" name="prediction_result" id="prediction_result"  placeholder="Result" height="20px" width="200px">
+            <br><br>
+            </div>
+       </div>
+    </div>
+   </div>
+   <div class="gearbox">
+        <img src="gear1.png" alt="" class="gearicon">
+        <h1 class="instruction">How to use it</h1>
+   </div>
+   <div class="steps">
+        <div class="step One">
+            <h1 class="stepText"><b>Uploading a File</b></h1>
+            <p>
+                Click the "Upload" button to select and upload your file. Wait for the file to upload completely.
+                Your file is successfully if it shown in the box and your file is ready to submit for processing.
+            </p>
+        </div>
+        <div class="step Two">
+            <h1 class="stepText"><b>Predicting the Closest Result</b></h1>
+            <p>
+                Once the file is uploaded, click the "Prediction" button to start the classification process.
+                Depending to the strength of your internet connection, the prediction may take some time. Be patient
+                while the application processes the file and generates the prediction.
+            </p>
+            
+        </div>
+        <div class="step Three">
+            <h1 class="stepText"><b>Displaying the Possible Results</b></h1>
+            <p>
+                After the prediction process is complete, it will display the closest result or the prediction of
+                corn disease. "Result" box is where the predicted classification is shown. You may now refer to the 
+                disease section for the possible actions to treat the disease.
+            </p>
+        </div>
+            
+   </div>
+   
+   <br><br>
+   <footer class="footer-footer">
+    <div class="footer-container">
+      <div class="footer-container1">
+        <span class="footer-text">CORNSCAN: SMART DISEASE DETECTOR FOR CORN CROPS</span>
+        <span>Copyright © 2023 Created by Team Corny.</span>
+      </div>
+      <div class="footer-container2">
+        <div class="footer-container3">
+          <span class="footer-text02 Large">CS313-Web Development</span>
+          <span class="footer-text03 Large">ISPSC Main Campus</span>
+          <span class="footer-text04 Large">Computer Science Department</span>
+        </div>
+      </div>
+
+      <div class="footer-container4">
+        <div class="footer-container5">
+          <span class="footer-text06 Large">Contacts</span>
+          <span class="footer-text05 Large">teamcorny@gmail.com</span>
+          <span class="footer-text07 Large">0912-345-6789</span>
+        </div>
+      </div>
+    </div>
+    <img alt="image" src="public/waves-white.svg" class="footer-image" />
+  </footer>
+   
+</body>
+</html>

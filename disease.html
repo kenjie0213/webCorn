@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+    <link rel="stylesheet" href="disease.css">
+
+<html>
+<head>   
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="" class="imglogo">
+            <p id="logo">CornScan</p>
+        </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li>
+                        <a href="home.html" >Home</a>
+                    </li>
+
+                    <li>
+                        <a href="classifier.html">Camera Classifier</a>
+                    </li>
+                    
+                    <li>
+                        <a href="classifier2.html" >File Classifier</a>
+                    </li>
+
+                    <li>
+                        <a href="disease.html" class="active">Diseases</a>
+                    </li>
+
+                    <li>
+                    <a href="developers.html" >Developers</a>
+                    </li>
+
+                    <li>
+                        <a href="account.html" >Account</a>
+                    </li>
+                </ul>
+            </nav>
+        
+    </header>
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+    <br>
+        <div class="language">
+            <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+            <script>
+
+                function loadGoogleTranslate()
+
+                {
+
+                    new google.translate.TranslateElement("myid")
+
+                }
+
+            </script>
+
+            <div id="myid"></div>
+
+
+        </div>
+
+    <div class="diseases">
+        <div class="name cornsmut">
+            <img src="Huitlacoche-on-corn.jpg" class="corn">
+            <h2>Corn Smut</h2>
+            <p>This disease is caused by the fungus Ustilago maydis.  Disease development is favored by high 
+                nitrogen level or high quantities of manure.  Injuries due to blowing soil or sand particles, 
+                cultivation or detasseling may greatly increase the potential for smut infection. <br><br>
+  
+                <b>Symptoms</b> <br>
+                Galls on aboveground parts, which are glistening white or grayish white tissues   <br>
+                These galls later turn black due to masses of powdery black spores  <br><br>
+                
+                <b>Management</b><br>
+                Follow a well balanced fertility program based on soil analysis <br>  
+                Avoid injuring corn plants during cultivation   <br>
+                Plant resistant varieties  
+            </p>
+        </div>
+    
+        <br><br>
+        <div class="name downy">
+            <img src="mildew.jpg" class="corn">
+            <h2>Downy Mildew</h2>
+            <p>This disease is caused by a fungus, Peronosclerospora philippinensis, which affects corn plants 
+                from two-leaf to silking stages. <br><br>
+  
+                <b>Symptoms</b> <br> 
+                White or yellow streaks, first at the base then on the entire leaf blade <br>   
+                Chlorosis (loss of greenness due to lack of chlorophyll)    <br>
+                Dwarfing   <br>
+                Ears and tassels poorly formed in severe infections 
+                <br><br> 
+
+                <b>Management</b><br>
+                Sanitation involving the pulling out and burning infected plants as soon as they are observed 
+                in the cornfield   <br>
+                Synchronous planting   <br>
+                Crop rotation   <br>
+                Planting of resistant varieties  <br>
+            </p>
+        </div>
+    
+        <br><br>
+        <div class="name root">
+            <img src="stalk.jpeg" class="corn">
+            <h2>Bacterial Stalk Rot</h2>
+            <p>This disease is caused by the bacterium Erwinia carotovora, which affects corn plants from 
+                two-leaf to maturity stages. <br><br>
+  
+               <b>Symptoms</b><br> 
+                Stalk rot starting from the base progressing upward and eventually causing wilting of lowermost 
+                leaves <br>   
+                Infected inner tissues of older plants deteriorate and become soft with foul odor and later 
+                dry up into easily disjointed fibers   <br>
+                Plants infected before tasseling usually topple over while those infected at post 
+                tasseling may remain standing but exhibit wilted leaves  <br><br>
+
+                <b>Management</b>  <br> 
+                Provide good drainage and improve soil condition through proper cultivation   <br>
+                Practice balanced fertilization.  Generally, bacterial stalk rot is severe when there is 
+                excessive nitrogen in the soil in relation to potassium.   <br>
+                Avoid close planting on fields previously infected with the disease. <br> 
+                  
+            </p>
+    </div>
+
+    <br><br>
+        <div class="name root">
+            <img src="4.webp" class="corn">
+            <h2>Banded Leaf and Sheath Blight  </h2>
+            <p>  
+                This disease is caused by the soil-borne fungus Rhizoctonia solani, which affects corn plants 
+                from late whorl to ear formation. <br><br>
+                  
+                <b>Symptoms</b><br>
+                Irregular blotches on the leaves, stalks and ears  <br> 
+                Blotches are grayish-green, with bluish gray or straw colored centers and with distinct brown 
+                borders   <br>
+                Presence of irregular light to dark brown fungus lumps known as sclerotia on the dead tissues  <br> 
+                Infected ears may be wholly or partially rotten showing some seed germination  <br><br>
+
+                <b>Management</b><br>
+                Practice sanitation by removing and burning infected leaves and stalks <br>  
+                Bury the sclerotia by deep plowing   <br>
+                Avoid planting varieties with very low ear placement  <br>
+            </p>
+    </div>
+
+    <br><br>
+        <div class="name root">
+            <img src="3.webp" class="corn">
+            <h2>Corn Mosaic</h2>
+            <p>  
+                This disease is caused by different strains of the maize dwarf mosaic virus.  
+                It is transmitted by corn aphids and infects corn plants from whorl to maturity stages. <br><br>
+  
+                <b>Symptoms</b><br><br> 
+                Narrow, pale yellow streaks on leaves parallel to leaf vein <br>  
+                The pale area later becomes diffused upon a paler green background   <br>
+                The base of infected leaves produces alternating broad streaks of green and pale green areas  <br><br>
+
+                <b>Management</b><br>
+                Plant resistant varieties <br>  
+                Remove infected plants as symptoms appear   <br>
+                Eliminate alternate hosts like weeds   <br>
+                Plant early to avoid high aphid population  
+            </p>
+    </div>
+
+
+    <br><br>
+    <div class="name root">
+        <img src="2.webp" class="corn">
+        <h2>Ear Rot</h2>
+        <p>  
+            This disease is caused by the fungus Diplodia maydis or Diplodia macrospora. <br><br>
+  
+            <b>Symptoms</b><br>
+            Presence of bleached to straw-colored lesions starting from the base of the ear   <br>
+            Husks tightly pasted together by the white fungus mycelium   <br>
+            Black pycnidia scattered on the surface of the husks, kernels and cobs  <br><br>
+
+            <b>Management</b><br>
+            Avoid using highly susceptible varieties <br>
+            Practice deep plowing and field sanitation.
+        </p>
+    </div>
+
+    <br><br>
+    <div class="name root">
+        <img src="5.webp" class="corn">
+        <h2>Leaf Rust</h2>
+        <p>  
+            This disease is caused by the fungus Puccinia polysora, which affects corn plants from mid-whorl 
+            to silking stages. <br><br>
+            
+            <b>Symptom</b><br>
+            Presence of small and circular brown rusty pustules or blisters on the upper and lower 
+            surfaces of a leaf.  These pustules are rough to touch and later erupt and release numerous 
+            rusty spores. <br><br>
+            
+            <b>Management</b><br>
+            Plant resistant varieties to help reduce occurrence of the disease.   
+        </p>
+    </div>
+
+    </div>
+   <br><br>
+   <br><br>
+   <footer class="footer-footer">
+    <div class="footer-container">
+      <div class="footer-container1">
+        <span class="footer-text">CORNSCAN: SMART DISEASE DETECTOR FOR CORN CROPS</span>
+        <span>Copyright © 2023 Created by Team Corny.</span>
+      </div>
+      <div class="footer-container2">
+        <div class="footer-container3">
+          <span class="footer-text02 Large">CS313-Web Development</span>
+          <span class="footer-text03 Large">ISPSC Main Campus</span>
+          <span class="footer-text04 Large">Computer Science Department</span>
+        </div>
+      </div>
+
+      <div class="footer-container4">
+        <div class="footer-container5">
+          <span class="footer-text06 Large">Contacts</span>
+          <span class="footer-text05 Large">teamcorny@gmail.com</span>
+          <span class="footer-text07 Large">0912-345-6789</span>
+        </div>
+      </div>
+    </div>
+    <img alt="image" src="public/waves-white.svg" class="footer-image" />
+  </footer>
+</body>
+</html>

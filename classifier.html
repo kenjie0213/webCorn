@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="classifier.css">
+<head>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+            <script type="text/javascript">
+                // More API functions here:
+                // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+            
+                // the link to your model provided by Teachable Machine export panel
+                const URL = "https://teachablemachine.withgoogle.com/models/GUMS-WvVG/";
+            
+                let model, webcam, labelContainer, maxPredictions;
+            
+                // Load the image model and setup the webcam
+                async function init() {
+                    const modelURL = URL + "model.json";
+                    const metadataURL = URL + "metadata.json";
+            
+                    // load the model and metadata
+                    // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+                    // or files from your local hard drive
+                    // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+                    model = await tmImage.load(modelURL, metadataURL);
+                    maxPredictions = model.getTotalClasses();
+            
+                    // Convenience function to setup a webcam
+                    const flip = true; // whether to flip the webcam
+                    webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
+                    await webcam.setup(); // request access to the webcam
+                    await webcam.play();
+                    window.requestAnimationFrame(loop);
+            
+                    // append elements to the DOM
+                    document.getElementById("webcam-container").appendChild(webcam.canvas);
+                    labelContainer = document.getElementById("label-container");
+                    for (let i = 0; i < maxPredictions; i++) { // and class labels
+                        labelContainer.appendChild(document.createElement("div"));
+                    }
+                }
+            
+                async function loop() {
+                    webcam.update(); // update the webcam frame
+                    await predict();
+                    window.requestAnimationFrame(loop);
+                }
+            
+                // run the webcam image through the image model
+                async function predict() {
+                    // predict can take in an image, video or canvas html element
+                    const prediction = await model.predict(webcam.canvas);
+                    for (let i = 0; i < maxPredictions; i++) {
+                        const classPrediction =
+                            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                        labelContainer.childNodes[i].innerHTML = classPrediction;
+                    }
+                }
+            </script>
+            
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="" class="imglogo">
+            <p id="logo">CornScan</p>
+        </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="classifier.html" class="active">Camera Classifier</a>
+                    </li>
+                    
+                    <li>
+                        <a href="classifier2.html" >File Classifier</a>
+                    </li>
+
+                    <li>
+                        <a href="disease.html"  >Diseases</a>
+                    </li>
+
+                    <li>
+                    <a href="developers.html" >Developers</a>
+                    </li>
+
+                    <li>
+                        <a href="account.html">Account</a>
+                    </li>
+                </ul>
+            </nav>
+        
+    </header>
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+    <br><br><br><br><br><br>
+
+    <div class="con1">
+        <div class="con2">
+            <div id="webcam-container"></div>
+            <div id="label-container"></div>
+            <br>
+            <button type="button" onclick="init()">Start</button>
+        </div>
+    </div>
+    <br><br>
+   <footer class="footer-footer">
+    <div class="footer-container">
+      <div class="footer-container1">
+        <span class="footer-text">CORNSCAN: SMART DISEASE DETECTOR FOR CORN CROPS</span>
+        <span>Copyright © 2023 Created by Team Corny.</span>
+      </div>
+      <div class="footer-container2">
+        <div class="footer-container3">
+          <span class="footer-text02 Large">CS313-Web Development</span>
+          <span class="footer-text03 Large">ISPSC Main Campus</span>
+          <span class="footer-text04 Large">Computer Science Department</span>
+        </div>
+      </div>
+
+      <br><br><br>
+      <div class="footer-container4">
+        <div class="footer-container5">
+          <span class="footer-text06 Large">Contacts</span>
+          <span class="footer-text05 Large">teamcorny@gmail.com</span>
+          <span class="footer-text07 Large">0912-345-6789</span>
+        </div>
+      </div>
+    </div>
+    <img alt="image" src="public/waves-white.svg" class="footer-image" />
+  </footer>
+    
+    
+</body>
+</html>
